@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TM Premium Hub - Premium Digital Services">
+<title>TM Premium Hub</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#070812;
+  color:#fff;
+  line-height:1.6;
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+  width:92%;
+  max-width:1150px;
+  margin:auto;
+}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(7,8,18,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #24263a;
+}
+
+.nav-inner{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  color:#00eaff;
+}
+
+.logo span{color:#fff}
+
+.nav-links{
+  display:flex;
+  gap:24px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#bbb;
+  transition:.3s;
+}
+
+.nav-links a:hover{color:#00eaff}
+
+.menu-btn{
+  display:none;
+  font-size:27px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+  radial-gradient(circle at 50% 20%,#153b55 0,#070812 45%);
+}
+
+.hero-content{
+  width:100%;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 16px;
+  border:1px solid #00eaff;
+  border-radius:30px;
+  color:#00eaff;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(42px,8vw,75px);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.gradient{
+  background:linear-gradient(90deg,#00eaff,#8b5cff,#ff3cac);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#aaa;
+  font-size:18px;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:13px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:12px;
+  font-weight:bold;
+  border:1px solid #303248;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:#00d084;
+  color:#06100b;
+  border:none;
+}
+
+.btn-secondary{
+  background:#151827;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* SECTION */
+section{
+  padding:75px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-title h2{
+  font-size:36px;
+  margin-bottom:8px;
+}
+
+.section-title p{color:#8d91a5}
+
+/* SEARCH */
+.search-box{
+  max-width:600px;
+  margin:0 auto 35px;
+}
+
+.search-box input{
+  width:100%;
+  padding:16px 20px;
+  background:#111421;
+  border:1px solid #292d42;
+  color:#fff;
+  border-radius:14px;
+  outline:none;
+  font-size:16px;
+}
+
+.search-box input:focus{
+  border-color:#00eaff;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.product{
+  background:linear-gradient(145deg,#111421,#0c0e18);
+  border:1px solid #262a3c;
+  border-radius:20px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  border-color:#00eaff;
+}
+
+.product-icon{
+  width:60px;
+  height:60px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:#1a1d2c;
+  font-size:30px;
+  margin-bottom:18px;
+}
+
+.product h3{
+  font-size:21px;
+  margin-bottom:7px;
+}
+
+.product p{
+  color:#888da0;
+  min-height:50px;
+}
+
+.price{
+  font-size:28px;
+  font-weight:900;
+  color:#00eaff;
+  margin:18px 0;
+}
+
+.price small{
+  font-size:13px;
+  color:#777;
+  font-weight:normal;
+}
+
+.order-btn{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:11px;
+  background:#00d084;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.feature{
+  text-align:center;
+  background:#10121e;
+  border:1px solid #24283a;
+  padding:25px 15px;
+  border-radius:18px;
+}
+
+.feature .icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.feature p{color:#858a9c;font-size:14px}
+
+/* ORDER */
+.order-area{
+  background:#0b0e19;
+}
+
+.order-box{
+  max-width:700px;
+  margin:auto;
+  background:#111421;
+  border:1px solid #292d42;
+  border-radius:22px;
+  padding:30px;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:7px;
+  color:#c9cbd5;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:14px;
+  border-radius:11px;
+  border:1px solid #303449;
+  background:#090b14;
+  color:#fff;
+  outline:none;
+  font-size:15px;
+}
+
+.form-group textarea{
+  resize:vertical;
+  min-height:100px;
+}
+
+.submit-btn{
+  width:100%;
+  padding:15px;
+  background:#25d366;
+  border:none;
+  border-radius:12px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* PAYMENT */
+.payment{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.pay-card{
+  background:#111421;
+  border:1px solid #282c40;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+
+.pay-card h3{margin:8px 0}
+
+.pay-card p{
+  color:#888da0;
+  font-size:14px;
+}
+
+/* FAQ */
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+details{
+  background:#111421;
+  border:1px solid #282c40;
+  border-radius:13px;
+  margin-bottom:12px;
+  padding:17px 20px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+
+details p{
+  color:#9296a7;
+  margin-top:12px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  background:linear-gradient(135deg,#10182a,#0b0d17);
+  border:1px solid #242a3d;
+  border-radius:25px;
+  padding:45px 20px;
+}
+
+.contact h2{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.contact p{
+  color:#9296a7;
+  margin-bottom:22px;
+}
+
+.whatsapp-number{
+  font-size:20px;
+  color:#25d366;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  padding:30px 0;
+  border-top:1px solid #202337;
+  text-align:center;
+  color:#777c8e;
+}
+
+.footer-logo{
+  color:#00eaff;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.75);
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-content{
+  width:100%;
+  max-width:500px;
+  background:#111421;
+  border:1px solid #30354b;
+  border-radius:22px;
+  padding:28px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:12px;
+  font-size:28px;
+  cursor:pointer;
+  color:#aaa;
+}
+
+.selected-service{
+  background:#0a0c15;
+  border-radius:12px;
+  padding:15px;
+  margin:18px 0;
+}
+
+.modal input{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #30354b;
+  background:#080a12;
+  color:#fff;
+  margin-bottom:13px;
+  outline:none;
+}
+
+.modal button{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  background:#25d366;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .payment{grid-template-columns:1fr}
+}
+
+@media(max-width:650px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:70px;
+    background:#090b14;
+    flex-direction:column;
+    padding:20px;
+    border-bottom:1px solid #292d40;
+  }
+
+  .nav-links.active{display:flex}
+
+  .menu-btn{display:block}
+
+  .products{grid-template-columns:1fr}
+
+  .features{grid-template-columns:1fr 1fr}
+
+  .hero{min-height:500px}
+
+  section{padding:55px 0}
+
+  .order-box{padding:20px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+
+    <a href="#home" class="logo">
+      TM <span>Premium Hub</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#payment">Payment</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+
+    <div class="badge">⚡ Premium Digital Services</div>
+
+    <h1>
+      Welcome to<br>
+      <span class="gradient">TM Premium Hub</span>
+    </h1>
+
+    <p>
+      YouTube Premium, Annual Pack, CapCut এবং আরও
+      বিভিন্ন ডিজিটাল সার্ভিস সহজে অর্ডার করুন।
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary">
+        🛍️ View Services
+      </a>
+
+      <a href="https://wa.me/8801334501977"
+         target="_blank"
+         class="btn btn-secondary">
+        💬 WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>আপনার প্রয়োজনীয় Premium Service বেছে নিন</p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="search"
+        placeholder="🔎 সার্ভিস খুঁজুন..."
+        onkeyup="searchProducts()"
+      >
+    </div>
+
+    <div class="products" id="products">
+
+      <div class="product" data-name="youtube premium">
+        <div class="product-icon">▶️</div>
+        <h3>YouTube Premium</h3>
+        <p>Premium সুবিধা উপভোগ করুন।</p>
+        <div class="price">৳30 <small>/ package</small></div>
+        <button class="order-btn"
+          onclick="openOrder('YouTube Premium','30')">
+          Order Now
+        </button>
+      </div>
+
+      <div class="product" data-name="youtube premium annual">
+        <div class="product-icon">👑</div>
+        <h3>YouTube Annual Pack</h3>
+        <p>Annual Premium Package.</p>
+        <div class="price">৳110 <small>/ pack</small></div>
+        <button class="order-btn"
+          onclick="openOrder('YouTube Premium Annual Pack','110')">
+          Order Now
+        </button>
+      </div>
+
+      <div class="product" data-name="capcut premium">
+        <div class="product-icon">🎬</div>
+        <h3>CapCut Premium</h3>
+        <p>Premium editing features.</p>
+        <div class="price">৳530 <small>/ package</small></div>
+        <button class="order-btn"
+          onclick="openOrder('CapCut Premium','530')">
+          Order Now
+        </button>
+      </div>
+
+      <!-- EXTRA PRODUCTS -->
+      <div class="product" data-name="canva pro">
+        <div class="product-icon">🎨</div>
+        <h3>Canva Pro</h3>
+        <p>Design এবং premium tools.</p>
+        <div class="price">Contact <small>for price</small></div>
+        <button class="order-btn"
+          onclick="openOrder('Canva Pro','Contact')">
+          Order Now
+        </button>
+      </div>
+
+      <div class="product" data-name="spotify premium">
+        <div class="product-icon">🎵</div>
+        <h3>Spotify Premium</h3>
+        <p>Premium music experience.</p>
+        <div class="price">Contact <small>for price</small></div>
+        <button class="order-btn"
+          onclick="openOrder('Spotify Premium','Contact')">
+          Order Now
+        </button>
+      </div>
+
+      <div class="product" data-name="netflix">
+        <div class="product-icon">🎞️</div>
+        <h3>Netflix</h3>
+        <p>Premium entertainment service.</p>
+        <div class="price">Contact <small>for price</small></div>
+        <button class="order-btn"
+          onclick="openOrder('Netflix','Contact')">
+          Order Now
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Choose Us?</h2>
+      <p>TM Premium Hub</p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon">⚡</div>
+        <h3>Fast Service</h3>
+        <p>দ্রুত অর্ডার প্রসেসিং।</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🔒</div>
+        <h3>Secure</h3>
+        <p>আপনার তথ্য নিরাপদ রাখুন।</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">💬</div>
+        <h3>Support</h3>
+        <p>WhatsApp support available.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">💎</div>
+        <h3>Premium</h3>
+        <p>Premium digital services.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ORDER -->
+<section class="order-area" id="order">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Place Your Order</h2>
+      <p>নিচের ফর্ম পূরণ করে WhatsApp-এ অর্ডার পাঠান</p>
+    </div>
+
+    <div class="order-box">
+
+      <div class="form-group">
+        <label>Service</label>
+
+        <select id="mainService">
+          <option value="">-- Service Select করুন --</option>
+          <option>YouTube Premium</option>
+          <option>YouTube Premium Annual Pack</option>
+          <option>CapCut Premium</option>
+          <option>Canva Pro</option>
+          <option>Spotify Premium</option>
+          <option>Netflix</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>আপনার Gmail</label>
+
+        <input
+          type="email"
+          id="mainGmail"
+          placeholder="example@gmail.com"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>অতিরিক্ত তথ্য (Optional)</label>
+
+        <textarea
+          id="mainNote"
+          placeholder="কোনো বিশেষ নির্দেশনা থাকলে লিখুন..."
+        ></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="submitMainOrder()">
+        💬 WhatsApp-এ অর্ডার পাঠান
+      </button>
+
+      <p style="color:#777;text-align:center;margin-top:15px;font-size:13px">
+        ⚠️ Gmail Password বা OTP কখনো দেবেন না।
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PAYMENT -->
+<section id="payment">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Payment</h2>
+      <p>অর্ডার কনফার্ম করার জন্য WhatsApp-এ পেমেন্ট তথ্য নিন</p>
+    </div>
+
+    <div class="payment">
+
+      <div class="pay-card">
+        <div style="font-size:40px">📱</div>
+        <h3>bKash</h3>
+        <p>Payment details জানতে WhatsApp করুন।</p>
+      </div>
+
+      <div class="pay-card">
+        <div style="font-size:40px">💳</div>
+        <h3>Nagad</h3>
+        <p>Payment details জানতে WhatsApp করুন।</p>
+      </div>
+
+      <div class="pay-card">
+        <div style="font-size:40px">💬</div>
+        <h3>WhatsApp</h3>
+        <p>পেমেন্ট করার আগে অর্ডার কনফার্ম করুন।</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>FAQ</h2>
+      <p>সাধারণ কিছু প্রশ্ন</p>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>কীভাবে অর্ডার করব?</summary>
+        <p>
+          আপনার পছন্দের সার্ভিস নির্বাচন করে Gmail দিন এবং
+          WhatsApp-এ অর্ডার পাঠান।
+        </p>
+      </details>
+
+      <details>
+        <summary>Gmail Password দিতে হবে?</summary>
+        <p>
+          না। ওয়েবসাইটে Gmail Password বা OTP দেওয়ার কোনো প্রয়োজন নেই।
+        </p>
+      </details>
+
+      <details>
+        <summary>পেমেন্ট কখন করব?</summary>
+        <p>
+          অর্ডার পাঠানোর পর WhatsApp-এ পেমেন্টের বিস্তারিত জেনে
+          তারপর পেমেন্ট করুন।
+        </p>
+      </details>
+
+      <details>
+        <summary>কীভাবে Support পাব?</summary>
+        <p>
+          নিচের WhatsApp Contact Button ব্যবহার করে যোগাযোগ করুন।
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+
+    <div class="contact">
+
+      <h2>Need Help?</h2>
+
+      <p>
+        অর্ডার বা সার্ভিস সম্পর্কে জানতে আমাদের WhatsApp-এ যোগাযোগ করুন।
+      </p>
+
+      <div class="whatsapp-number">
+        WhatsApp: 01334501977
+      </div>
+
+      <br>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/8801334501977"
+        target="_blank">
+        💬 Chat on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-logo">
+      TM Premium Hub
+    </div>
+
+    <p>
+      © 2026 TM Premium Hub. All Rights Reserved.
+    </p>
+
+  </div>
+</footer>
+
+
+<!-- ORDER MODAL -->
+<div class="modal" id="orderModal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <h2>🛒 Order Service</h2>
+
+    <div class="selected-service" id="selectedService">
+      Service
+    </div>
+
+    <input
+      type="email"
+      id="modalGmail"
+      placeholder="আপনার Gmail লিখুন"
+    >
+
+    <button onclick="sendModalOrder()">
+      💬 WhatsApp-এ অর্ডার পাঠান
+    </button>
+
+    <p style="color:#777;font-size:12px;margin-top:15px;text-align:center">
+      Gmail Password/OTP কখনো দেবেন না।
+    </p>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* WHATSAPP NUMBER */
+const WHATSAPP_NUMBER = "8801334501977";
+
+let selectedProduct = "";
+let selectedPrice = "";
+
+
+/* MOBILE MENU */
+function toggleMenu(){
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+
+
+/* PRODUCT SEARCH */
+function searchProducts(){
+
+  const query =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+  const products =
+    document.querySelectorAll(".product");
+
+  products.forEach(product => {
+
+    const name =
+      product.getAttribute("data-name")
+      .toLowerCase();
+
+    if(name.includes(query)){
+      product.style.display = "";
+    }else{
+      product.style.display = "none";
+    }
+
+  });
+}
+
+
+/* OPEN MODAL */
+function openOrder(product, price){
+
+  selectedProduct = product;
+  selectedPrice = price;
+
+  document.getElementById("selectedService").innerHTML =
+    "<strong>" + product + "</strong><br>" +
+    "Price: <strong>৳" + price + "</strong>";
+
+  document.getElementById("orderModal").style.display = "flex";
+
+}
+
+
+/* CLOSE MODAL */
+function closeModal(){
+
+  document.getElementById("orderModal")
+    .style.display = "none";
+
+}
+
+
+/* MODAL ORDER */
+function sendModalOrder(){
+
+  const gmail =
+    document.getElementById("modalGmail")
+    .value.trim();
+
+  if(!gmail){
+    alert("দয়া করে Gmail address দিন।");
+    return;
+  }
+
+  if(!/^[^\s@]+@gmail\.com$/i.test(gmail)){
+    alert("দয়া করে একটি সঠিক Gmail address দিন।");
+    return;
+  }
+
+  const message =
+`TM Premium Hub - New Order
+
+Service: ${selectedProduct}
+Price: ৳${selectedPrice}
+Gmail: ${gmail}
+
+আমি এই সার্ভিসটি নিতে চাই।`;
+
+  const url =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank");
+
+}
+
+
+/* MAIN ORDER */
+function submitMainOrder(){
+
+  const service =
+    document.getElementById("mainService").value;
+
+  const gmail =
+    document.getElementById("mainGmail").value.trim();
+
+  const note =
+    document.getElementById("mainNote").value.trim();
+
+  if(!service){
+    alert("একটি Service নির্বাচন করুন।");
+    return;
+  }
+
+  if(!gmail){
+    alert("আপনার Gmail দিন।");
+    return;
+  }
+
+  if(!/^[^\s@]+@gmail\.com$/i.test(gmail)){
+    alert("সঠিক Gmail address দিন।");
+    return;
+  }
+
+  const message =
+`TM Premium Hub - New Order
+
+Service: ${service}
+Gmail: ${gmail}
+Additional Note: ${note || "None"}
+
+আমি এই সার্ভিসটি নিতে চাই।`;
+
+  const url =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank");
+
+}
+
+
+/* CLOSE MODAL OUTSIDE */
+window.onclick = function(event){
+
+  const modal =
+    document.getElementById("orderModal");
+
+  if(event.target === modal){
+    closeModal();
+  }
+
+};
+
+</script>
+
+</body>
+</html>
